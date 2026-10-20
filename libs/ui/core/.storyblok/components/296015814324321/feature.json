@@ -1,0 +1,14 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": false,
+  "is_nestable": true,
+  "name": "feature",
+  "schema": {
+    "name": {
+      "type": "text",
+      "pos": 0
+    }
+  }
+}

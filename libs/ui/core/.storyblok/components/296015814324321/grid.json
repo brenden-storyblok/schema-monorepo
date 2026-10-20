@@ -1,0 +1,14 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": false,
+  "is_nestable": true,
+  "name": "grid",
+  "schema": {
+    "columns": {
+      "type": "bloks",
+      "pos": 0
+    }
+  }
+}

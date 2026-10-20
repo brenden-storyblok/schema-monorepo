@@ -5,6 +5,12 @@
   "references": [
     {
       "path": "./apps/app-1"
+    },
+    {
+      "path": "./libs/ui/core"
+    },
+    {
+      "path": "./libs/ui/app-1"
     }
   ]
 }

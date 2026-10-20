@@ -1,0 +1,30 @@
+[
+  {
+    "name": "app-1",
+    "id": 232692485969353,
+    "uuid": "acead823-d4e2-412d-9c00-e1931cf91559",
+    "parent_id": null,
+    "parent_uuid": null
+  },
+  {
+    "name": "components",
+    "id": 232692486317514,
+    "uuid": "af044a6d-4c38-4f73-a033-ebbcf86167c9",
+    "parent_id": 232692485969353,
+    "parent_uuid": "acead823-d4e2-412d-9c00-e1931cf91559"
+  },
+  {
+    "name": "content-types",
+    "id": 232692489610699,
+    "uuid": "70b41193-96ac-4ba7-99c1-1afd8996b7b3",
+    "parent_id": 232692485969353,
+    "parent_uuid": "acead823-d4e2-412d-9c00-e1931cf91559"
+  },
+  {
+    "name": "core",
+    "id": 232692407145928,
+    "uuid": "49bbd8a9-f6f5-404a-91b7-ec92530a9257",
+    "parent_id": null,
+    "parent_uuid": null
+  }
+]

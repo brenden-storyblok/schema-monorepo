@@ -1,0 +1,45 @@
+{
+  "name": "@monorepo/ui-app-1",
+  "version": "0.0.1",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./package.json": "./package.json",
+    "./server": {
+      "types": "./src/server.ts",
+      "import": "./src/server.ts",
+      "default": "./src/server.ts"
+    },
+    "./schema": {
+      "types": "./src/schema/schema.ts",
+      "import": "./src/schema/schema.ts",
+      "default": "./src/schema/schema.ts"
+    }
+  },
+  "scripts": {
+    "schema:validate": "storyblok schema validate src/schema/schema.ts",
+    "schema:push": "storyblok schema push src/schema/schema.ts --space 296015814324321",
+    "schema:push:dry": "storyblok schema push src/schema/schema.ts --space 296015814324321 --dry-run"
+  },
+  "dependencies": {
+    "@monorepo/ui-core": "*",
+    "@storyblok/react": "^7.3.1",
+    "@storyblok/schema": "^0.5.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "nx": {
+    "name": "ui-app-1",
+    "targets": {
+      "schema:push": {
+        "cache": false
+      }
+    }
+  }
+}

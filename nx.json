@@ -49,6 +49,11 @@
         "style": "css",
         "linter": "eslint"
       }
+    },
+    "@nx/react": {
+      "library": {
+        "unitTestRunner": "none"
+      }
     }
   }
 }

@@ -1,0 +1,15 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": true,
+  "is_nestable": false,
+  "name": "app_1_page",
+  "display_name": "App 1 Page",
+  "schema": {
+    "body": {
+      "type": "bloks",
+      "pos": 0
+    }
+  }
+}
