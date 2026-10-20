@@ -1,0 +1,92 @@
+{
+  "name": "youtube_player",
+  "display_name": "YouTube Player",
+  "description": "",
+  "created_at": "2026-10-20T14:23:12.827Z",
+  "updated_at": "2026-10-20T14:23:12.827Z",
+  "id": 232720764223691,
+  "schema": {
+    "video_id": {
+      "type": "text",
+      "display_name": "Video ID",
+      "description": "The 11-character ID only, e.g. dQw4w9WgXcQ from youtube.com/watch?v=dQw4w9WgXcQ.",
+      "required": true,
+      "regex": "^[A-Za-z0-9_-]{11}$",
+      "pos": 0,
+      "id": "Kl6JQNn6RSKCUJQ2Hxv1IA"
+    },
+    "title": {
+      "type": "text",
+      "display_name": "Title",
+      "description": "Screen readers announce this as the player name.",
+      "required": true,
+      "pos": 1,
+      "id": "dAGO2zBlTu2iMdbQez_GPw"
+    },
+    "playback_tab": {
+      "type": "tab",
+      "display_name": "Playback",
+      "keys": [
+        "autoplay",
+        "mute",
+        "loop",
+        "show_controls",
+        "start"
+      ],
+      "pos": 2,
+      "id": "laK6xP2r"
+    },
+    "autoplay": {
+      "type": "boolean",
+      "display_name": "Autoplay",
+      "description": "Browsers only autoplay muted video, so this also mutes.",
+      "default_value": false,
+      "pos": 3,
+      "id": "KinzC2PQSNaHR4hEXVQnrg"
+    },
+    "mute": {
+      "type": "boolean",
+      "display_name": "Mute",
+      "default_value": false,
+      "pos": 4,
+      "id": "IpAkIw4xTJqrwkBJb5L9lw"
+    },
+    "loop": {
+      "type": "boolean",
+      "display_name": "Loop",
+      "default_value": false,
+      "pos": 5,
+      "id": "-ITJvRhjTQm2X7wq7tCNQw"
+    },
+    "show_controls": {
+      "type": "boolean",
+      "display_name": "Show controls",
+      "default_value": true,
+      "pos": 6,
+      "id": "-vkjF8IFQqmdrcgQQ07iRA"
+    },
+    "start": {
+      "type": "number",
+      "display_name": "Start at (seconds)",
+      "description": "Leave empty to start from the beginning.",
+      "min_value": 0,
+      "pos": 7,
+      "id": "-2pSFViTSZyB5BvLwIuRPw"
+    }
+  },
+  "image": null,
+  "preview_field": "",
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "YouTube Player",
+  "component_group_uuid": "af044a6d-4c38-4f73-a033-ebbcf86167c9",
+  "color": "",
+  "icon": "",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "metadata": {}
+}

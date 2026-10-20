@@ -10,11 +10,13 @@ import type {
 import type { Blocks as CoreBlocks } from '@monorepo/ui-core/schema';
 
 import { app1PageBlock } from './blocks/app-1-page';
+import { youtubePlayerBlock } from './blocks/youtube-player';
 import { app1Components, app1ContentTypes, app1Folder } from './folders';
 
 export const schema = defineSchema({
   blocks: {
     app1PageBlock,
+    youtubePlayerBlock,
   },
   folders: {
     app1Folder,
