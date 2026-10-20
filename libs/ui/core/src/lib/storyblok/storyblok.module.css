@@ -3,7 +3,7 @@
  * on the block classes' wrappers); components only read the private `--_*`
  * aliases below. `:where()` keeps specificity at zero.
  */
-:where(.teaser, .feature, .grid) {
+:where(.teaser, .feature, .grid, .text) {
   --_surface: var(--sb-surface, #ffffff);
   --_surface-subtle: var(--sb-surface-subtle, #f3f4f8);
   --_surface-inverted: var(--sb-surface-inverted, #111827);
@@ -253,4 +253,133 @@
     transform: translateY(-3px);
     box-shadow: var(--_shadow-raised);
   }
+}
+
+/* Text */
+
+/*
+ * Richtext output arrives as bare elements, so style them through the root
+ * class. Vertical rhythm comes from margin-block on direct children only;
+ * nested lists and quotes keep their own spacing.
+ */
+.text {
+  max-width: 72ch;
+  margin-inline: auto;
+  padding: var(--_space-4) var(--_space-3);
+  color: var(--_text);
+  font-size: var(--_font-body-lg);
+  line-height: 1.7;
+}
+
+.text > * {
+  margin-block: 0;
+}
+
+.text > * + * {
+  margin-block-start: var(--_space-2);
+}
+
+.text > :is(h2, h3, h4) + * {
+  margin-block-start: var(--_space-1);
+}
+
+.text > * + :is(h2, h3, h4) {
+  margin-block-start: var(--_space-4);
+}
+
+.text :is(h2, h3, h4) {
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.text h2 {
+  font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+}
+
+.text h3 {
+  font-size: clamp(1.25rem, 1.125rem + 0.5vw, 1.5rem);
+}
+
+.text h4 {
+  font-size: var(--_font-lg);
+}
+
+.text :is(ul, ol) {
+  padding-inline-start: 1.5em;
+}
+
+.text li + li,
+.text li > :is(ul, ol) {
+  margin-block-start: 0.375em;
+}
+
+/* The editor wraps list item text in a paragraph. */
+.text li > p {
+  margin: 0;
+}
+
+.text a {
+  color: var(--_accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.text a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.text a:focus-visible {
+  outline: 3px solid var(--_accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.text blockquote {
+  margin-inline: 0;
+  padding-inline-start: var(--_space-3);
+  border-inline-start: 3px solid var(--_accent);
+  color: var(--_muted);
+}
+
+.text blockquote > * {
+  margin-block: 0;
+}
+
+.text blockquote > * + * {
+  margin-block-start: var(--_space-1);
+}
+
+.text code {
+  padding: 0.125em 0.375em;
+  border-radius: 0.375em;
+  background: var(--_surface-subtle);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.875em;
+}
+
+.text pre {
+  overflow-x: auto;
+  padding: var(--_space-2) var(--_space-3);
+  border-radius: var(--_radius);
+  background: var(--_surface-inverted);
+  color: var(--_text-inverted);
+  line-height: 1.5;
+}
+
+.text pre code {
+  padding: 0;
+  background: none;
+  color: inherit;
+}
+
+.text hr {
+  border: 0;
+  border-block-start: 1px solid var(--_border);
+}
+
+.text > hr {
+  margin-block: var(--_space-4);
 }

@@ -4,11 +4,11 @@ Storyblok blocks for the apps in this workspace: React Server Components plus th
 
 ## Entry points
 
-| Import                     | File                   | Contents                                                                             |
-| -------------------------- | ---------------------- | ------------------------------------------------------------------------------------ |
-| `@monorepo/ui-core`        | `src/index.ts`         | Client components and non-server utilities (empty for now).                          |
-| `@monorepo/ui-core/server` | `src/server.ts`        | Server components `Feature`, `Grid`, `Page`, `Teaser` and the `components` registry. |
-| `@monorepo/ui-core/schema` | `src/schema/schema.ts` | The `schema` object and its types: `Schema`, `Blocks`, `Block<'name'>`, `Story`.     |
+| Import                     | File                   | Contents                                                                                     |
+| -------------------------- | ---------------------- | -------------------------------------------------------------------------------------------- |
+| `@monorepo/ui-core`        | `src/index.ts`         | Client components and non-server utilities (empty for now).                                  |
+| `@monorepo/ui-core/server` | `src/server.ts`        | Server components `Feature`, `Grid`, `Page`, `Teaser`, `Text` and the `components` registry. |
+| `@monorepo/ui-core/schema` | `src/schema/schema.ts` | The `schema` object and its types: `Schema`, `Blocks`, `Block<'name'>`, `Story`.             |
 
 Pass the registry to `storyblokInit`:
 

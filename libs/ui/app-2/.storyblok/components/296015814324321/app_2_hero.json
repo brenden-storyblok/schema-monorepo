@@ -1,0 +1,122 @@
+{
+  "name": "app_2_hero",
+  "display_name": "Hero",
+  "description": "",
+  "created_at": "2026-10-20T14:57:51.269Z",
+  "updated_at": "2026-10-20T14:57:51.269Z",
+  "id": 232729277522791,
+  "schema": {
+    "headline": {
+      "type": "text",
+      "display_name": "Headline",
+      "description": "The page heading. Use one hero per page.",
+      "required": true,
+      "pos": 0,
+      "id": "iDgrb39QS0ehftnaJuRvdw"
+    },
+    "eyebrow": {
+      "type": "text",
+      "display_name": "Eyebrow",
+      "description": "Small label shown above the headline.",
+      "pos": 1,
+      "id": "9fK7_TPBRM2Too6NoGtXng"
+    },
+    "description": {
+      "type": "textarea",
+      "display_name": "Description",
+      "description": "Supporting paragraph shown below the headline.",
+      "pos": 2,
+      "id": "5VZ-3g6dRTGywJBVk-gEng"
+    },
+    "image": {
+      "type": "asset",
+      "display_name": "Image",
+      "description": "Shown beside the text on wide screens. Set alt text on the asset.",
+      "filetypes": [
+        "images"
+      ],
+      "pos": 3,
+      "id": "fq2esNAMRvyDGv0V0hbmkg"
+    },
+    "cta_label": {
+      "type": "text",
+      "display_name": "Button label",
+      "pos": 4,
+      "id": "pnwXQljHTBeObmNDrmo8jw"
+    },
+    "cta_link": {
+      "type": "multilink",
+      "email_link_type": true,
+      "allow_target_blank": true,
+      "show_anchor": true,
+      "asset_link_type": true,
+      "display_name": "Button link",
+      "description": "The button only appears when both label and link are set.",
+      "pos": 5,
+      "id": "F_efPn55SmOG98D_xgVqSg"
+    },
+    "style_tab": {
+      "type": "tab",
+      "display_name": "Style",
+      "keys": [
+        "alignment",
+        "variant"
+      ],
+      "pos": 6,
+      "id": "zSXv2rA"
+    },
+    "alignment": {
+      "type": "option",
+      "display_name": "Alignment",
+      "description": "Center stacks the image below the text.",
+      "default_value": "left",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Left",
+          "value": "left"
+        },
+        {
+          "name": "Center",
+          "value": "center"
+        }
+      ],
+      "pos": 7,
+      "id": "I7EPMi4gR0ug1Xp9VPJrxw"
+    },
+    "variant": {
+      "type": "option",
+      "display_name": "Variant",
+      "description": "Inverted uses a dark surface.",
+      "default_value": "default",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Default",
+          "value": "default"
+        },
+        {
+          "name": "Inverted",
+          "value": "inverted"
+        }
+      ],
+      "pos": 8,
+      "id": "Sev7ff-rTKqKcxCBr4OsTA"
+    }
+  },
+  "image": null,
+  "preview_field": "",
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "Hero",
+  "component_group_uuid": "6bcb1912-9a2c-437f-bad7-8070bb50c353",
+  "color": "",
+  "icon": "",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null,
+  "metadata": {}
+}

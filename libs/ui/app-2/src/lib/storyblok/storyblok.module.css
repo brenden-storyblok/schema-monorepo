@@ -1,0 +1,157 @@
+.page {
+  display: grid;
+  gap: 3.5rem;
+  margin-top: 2.5rem;
+  width: 85%;
+  margin-inline: auto;
+}
+
+/*
+ * Design tokens, same `--sb-*` names and defaults as ui-core. Apps override
+ * the public `--sb-*` properties on an ancestor; the hero only reads the
+ * private `--_*` aliases. `:where()` keeps specificity at zero.
+ */
+:where(.hero) {
+  --_surface: var(--sb-surface, #ffffff);
+  --_surface-subtle: var(--sb-surface-subtle, #f3f4f8);
+  --_surface-inverted: var(--sb-surface-inverted, #111827);
+  --_text: var(--sb-text, #111827);
+  --_text-inverted: var(--sb-text-inverted, #f9fafb);
+  --_muted: var(--sb-muted, #4b5563);
+  --_muted-inverted: var(--sb-muted-inverted, #d1d5db);
+  --_accent: var(--sb-accent, #4338ca);
+  --_accent-contrast: var(--sb-accent-contrast, #ffffff);
+  --_radius: var(--sb-radius, 0.75rem);
+  --_space-1: var(--sb-space-1, 0.5rem);
+  --_space-2: var(--sb-space-2, 1rem);
+  --_space-3: var(--sb-space-3, 1.5rem);
+  --_space-5: var(--sb-space-5, 3rem);
+  --_space-6: var(--sb-space-6, 5rem);
+  --_font-sm: var(--sb-font-sm, 0.8125rem);
+  --_font-md: var(--sb-font-md, 1rem);
+  --_font-body-lg: var(--sb-font-body-lg, 1.125rem);
+}
+
+/* Hero */
+
+.hero {
+  --_hero-bg: var(--_surface);
+  --_hero-fg: var(--_text);
+  --_hero-muted: var(--_muted);
+  --_hero-accent: var(--_accent);
+  padding: var(--_space-6) var(--_space-3);
+  background: var(--_hero-bg);
+  color: var(--_hero-fg);
+}
+
+.hero[data-variant='inverted'] {
+  --_hero-bg: var(--_surface-inverted);
+  --_hero-fg: var(--_text-inverted);
+  --_hero-muted: var(--_muted-inverted);
+  --_hero-accent: var(--_text-inverted);
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: var(--_space-5);
+  max-width: 72rem;
+  margin-inline: auto;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--_space-2);
+}
+
+.hero[data-alignment='center'] .heroText {
+  align-items: center;
+  text-align: center;
+}
+
+.heroEyebrow {
+  margin: 0;
+  color: var(--_hero-accent);
+  font-size: var(--_font-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heroHeadline {
+  margin: 0;
+  max-width: 20ch;
+  font-size: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.heroDescription {
+  margin: 0;
+  max-width: 60ch;
+  color: var(--_hero-muted);
+  font-size: var(--_font-body-lg);
+  line-height: 1.6;
+}
+
+.heroCta {
+  display: inline-block;
+  margin-top: var(--_space-1);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--_radius);
+  background: var(--_accent);
+  color: var(--_accent-contrast);
+  font-size: var(--_font-md);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.heroCta:hover {
+  filter: brightness(1.1);
+}
+
+.hero[data-variant='inverted'] .heroCta {
+  background: var(--_text-inverted);
+  color: var(--_surface-inverted);
+}
+
+.hero[data-variant='inverted'] .heroCta:hover {
+  background: var(--_surface-subtle);
+  filter: none;
+}
+
+.heroCta:focus-visible {
+  outline: 3px solid var(--_hero-accent);
+  outline-offset: 3px;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--_radius);
+  object-fit: cover;
+}
+
+.hero[data-alignment='center'] .heroImage {
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
+/* Text and image side by side; centered alignment stays stacked. */
+@media (min-width: 768px) {
+  .hero:not([data-alignment='center']) .heroInner:has(.heroImage) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .heroCta {
+    transition: filter 150ms ease;
+  }
+}

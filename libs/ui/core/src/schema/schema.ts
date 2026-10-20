@@ -11,6 +11,7 @@ import type {
 import { featureBlock } from './blocks/feature';
 import { gridBlock } from './blocks/grid';
 import { teaserBlock } from './blocks/teaser';
+import { textBlock } from './blocks/text';
 import { coreFolder } from './folders';
 
 export const schema = defineSchema({
@@ -18,6 +19,7 @@ export const schema = defineSchema({
     featureBlock,
     gridBlock,
     teaserBlock,
+    textBlock,
   },
   folders: {
     coreFolder,

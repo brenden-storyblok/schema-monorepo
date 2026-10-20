@@ -3,7 +3,7 @@
   "display_name": "YouTube Player",
   "description": "",
   "created_at": "2026-10-20T14:23:12.827Z",
-  "updated_at": "2026-10-20T14:23:12.827Z",
+  "updated_at": "2026-10-20T14:57:45.331Z",
   "id": 232720764223691,
   "schema": {
     "video_id": {
@@ -82,7 +82,7 @@
   "all_presets": [],
   "preset_id": null,
   "real_name": "YouTube Player",
-  "component_group_uuid": "af044a6d-4c38-4f73-a033-ebbcf86167c9",
+  "component_group_uuid": "5327175c-5eba-4eae-b8ca-9f5aea2c9c35",
   "color": "",
   "icon": "",
   "internal_tags_list": [],
