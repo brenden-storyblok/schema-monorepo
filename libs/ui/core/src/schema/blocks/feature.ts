@@ -15,19 +15,19 @@ export const featureBlock = defineBlock({
       type: 'textarea',
       display_name: 'Description',
     }),
-    defineField('icon', {
-      type: 'option',
-      display_name: 'Icon',
-      default_value: 'none',
-      exclude_empty_option: true,
-      options: [
-        { name: 'None', value: 'none' },
-        { name: 'Bolt', value: 'bolt' },
-        { name: 'Shield', value: 'shield' },
-        { name: 'Chart', value: 'chart' },
-        { name: 'Sparkles', value: 'sparkles' },
-      ],
-    }),
+    // defineField('icon', {
+    //   type: 'option',
+    //   display_name: 'Icon',
+    //   default_value: 'none',
+    //   exclude_empty_option: true,
+    //   options: [
+    //     { name: 'None', value: 'none' },
+    //     { name: 'Bolt', value: 'bolt' },
+    //     { name: 'Shield', value: 'shield' },
+    //     { name: 'Chart', value: 'chart' },
+    //     { name: 'Sparkles', value: 'sparkles' },
+    //   ],
+    // }),
     defineField('style_tab', {
       type: 'tab',
       display_name: 'Style',

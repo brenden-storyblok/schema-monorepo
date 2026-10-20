@@ -16,35 +16,6 @@
       "display_name": "Description",
       "pos": 1
     },
-    "icon": {
-      "type": "option",
-      "display_name": "Icon",
-      "default_value": "none",
-      "exclude_empty_option": true,
-      "options": [
-        {
-          "name": "None",
-          "value": "none"
-        },
-        {
-          "name": "Bolt",
-          "value": "bolt"
-        },
-        {
-          "name": "Shield",
-          "value": "shield"
-        },
-        {
-          "name": "Chart",
-          "value": "chart"
-        },
-        {
-          "name": "Sparkles",
-          "value": "sparkles"
-        }
-      ],
-      "pos": 2
-    },
     "style_tab": {
       "type": "tab",
       "display_name": "Style",
@@ -52,7 +23,7 @@
         "variant",
         "alignment"
       ],
-      "pos": 3
+      "pos": 2
     },
     "variant": {
       "type": "option",
@@ -73,7 +44,7 @@
           "value": "accent"
         }
       ],
-      "pos": 4
+      "pos": 3
     },
     "alignment": {
       "type": "option",
@@ -90,7 +61,7 @@
           "value": "center"
         }
       ],
-      "pos": 5
+      "pos": 4
     }
   }
 }
