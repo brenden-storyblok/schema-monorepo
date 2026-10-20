@@ -8,7 +8,89 @@
   "schema": {
     "name": {
       "type": "text",
+      "display_name": "Name",
       "pos": 0
+    },
+    "description": {
+      "type": "textarea",
+      "display_name": "Description",
+      "pos": 1
+    },
+    "icon": {
+      "type": "option",
+      "display_name": "Icon",
+      "default_value": "none",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "None",
+          "value": "none"
+        },
+        {
+          "name": "Bolt",
+          "value": "bolt"
+        },
+        {
+          "name": "Shield",
+          "value": "shield"
+        },
+        {
+          "name": "Chart",
+          "value": "chart"
+        },
+        {
+          "name": "Sparkles",
+          "value": "sparkles"
+        }
+      ],
+      "pos": 2
+    },
+    "style_tab": {
+      "type": "tab",
+      "display_name": "Style",
+      "keys": [
+        "variant",
+        "alignment"
+      ],
+      "pos": 3
+    },
+    "variant": {
+      "type": "option",
+      "display_name": "Variant",
+      "default_value": "default",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Default",
+          "value": "default"
+        },
+        {
+          "name": "Outlined",
+          "value": "outlined"
+        },
+        {
+          "name": "Accent",
+          "value": "accent"
+        }
+      ],
+      "pos": 4
+    },
+    "alignment": {
+      "type": "option",
+      "display_name": "Alignment",
+      "default_value": "left",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Left",
+          "value": "left"
+        },
+        {
+          "name": "Center",
+          "value": "center"
+        }
+      ],
+      "pos": 5
     }
   }
 }

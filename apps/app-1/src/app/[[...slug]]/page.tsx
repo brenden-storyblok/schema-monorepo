@@ -17,7 +17,10 @@ export default async function StoryPage({
   return (
     <div className="wrapper">
       <div className="container">
-        <StoryblokStory story={story} />
+        <StoryblokStory
+          story={story}
+          bridgeOptions={{ resolveLinks: 'link' }}
+        />
       </div>
     </div>
   );
@@ -27,7 +30,7 @@ async function fetchStory(fullSlug: string) {
   try {
     const { data } = await getStoryblokApi().get(
       `cdn/stories/${fullSlug}`,
-      { version: storyVersion },
+      { version: storyVersion, resolve_links: 'link' },
       { cache: 'no-store' },
     );
     return data.story;

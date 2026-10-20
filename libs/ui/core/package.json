@@ -27,6 +27,7 @@
     "schema:push:dry": "storyblok schema push src/schema/schema.ts --space 296015814324321 --dry-run"
   },
   "dependencies": {
+    "@monorepo/storyblok-utils": "*",
     "@storyblok/react": "^7.3.1",
     "@storyblok/schema": "^0.5.0"
   },

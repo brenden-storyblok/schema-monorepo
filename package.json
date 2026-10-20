@@ -45,6 +45,7 @@
   "workspaces": [
     "apps/*",
     "libs/*",
-    "libs/ui/*"
+    "libs/ui/*",
+    "libs/shared/*"
   ]
 }

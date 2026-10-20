@@ -11,6 +11,9 @@
     },
     {
       "path": "./libs/ui/app-1"
+    },
+    {
+      "path": "./libs/shared/storyblok-utils"
     }
   ]
 }
