@@ -1,32 +1,30 @@
 {
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": false,
+  "is_nestable": true,
   "name": "app_2_hero",
   "display_name": "Hero",
-  "description": "",
-  "created_at": "2026-10-20T14:57:51.269Z",
-  "updated_at": "2026-10-20T14:57:51.269Z",
-  "id": 232729277522791,
   "schema": {
     "headline": {
       "type": "text",
       "display_name": "Headline",
       "description": "The page heading. Use one hero per page.",
       "required": true,
-      "pos": 0,
-      "id": "iDgrb39QS0ehftnaJuRvdw"
+      "pos": 0
     },
     "eyebrow": {
       "type": "text",
       "display_name": "Eyebrow",
       "description": "Small label shown above the headline.",
-      "pos": 1,
-      "id": "9fK7_TPBRM2Too6NoGtXng"
+      "pos": 1
     },
     "description": {
       "type": "textarea",
       "display_name": "Description",
       "description": "Supporting paragraph shown below the headline.",
-      "pos": 2,
-      "id": "5VZ-3g6dRTGywJBVk-gEng"
+      "pos": 2
     },
     "image": {
       "type": "asset",
@@ -35,14 +33,12 @@
       "filetypes": [
         "images"
       ],
-      "pos": 3,
-      "id": "fq2esNAMRvyDGv0V0hbmkg"
+      "pos": 3
     },
     "cta_label": {
       "type": "text",
       "display_name": "Button label",
-      "pos": 4,
-      "id": "pnwXQljHTBeObmNDrmo8jw"
+      "pos": 4
     },
     "cta_link": {
       "type": "multilink",
@@ -52,8 +48,7 @@
       "asset_link_type": true,
       "display_name": "Button link",
       "description": "The button only appears when both label and link are set.",
-      "pos": 5,
-      "id": "F_efPn55SmOG98D_xgVqSg"
+      "pos": 5
     },
     "style_tab": {
       "type": "tab",
@@ -62,8 +57,7 @@
         "alignment",
         "variant"
       ],
-      "pos": 6,
-      "id": "zSXv2rA"
+      "pos": 6
     },
     "alignment": {
       "type": "option",
@@ -81,8 +75,7 @@
           "value": "center"
         }
       ],
-      "pos": 7,
-      "id": "I7EPMi4gR0ug1Xp9VPJrxw"
+      "pos": 7
     },
     "variant": {
       "type": "option",
@@ -100,23 +93,7 @@
           "value": "inverted"
         }
       ],
-      "pos": 8,
-      "id": "Sev7ff-rTKqKcxCBr4OsTA"
+      "pos": 8
     }
-  },
-  "image": null,
-  "preview_field": "",
-  "is_root": false,
-  "preview_tmpl": null,
-  "is_nestable": true,
-  "all_presets": [],
-  "preset_id": null,
-  "real_name": "Hero",
-  "component_group_uuid": "6bcb1912-9a2c-437f-bad7-8070bb50c353",
-  "color": "",
-  "icon": "",
-  "internal_tags_list": [],
-  "internal_tag_ids": [],
-  "content_type_asset_preview": null,
-  "metadata": {}
+  }
 }

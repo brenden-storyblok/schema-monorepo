@@ -1,10 +1,11 @@
 {
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": false,
+  "is_nestable": true,
   "name": "youtube_player",
   "display_name": "YouTube Player",
-  "description": "",
-  "created_at": "2026-10-20T14:23:12.827Z",
-  "updated_at": "2026-10-20T14:57:45.331Z",
-  "id": 232720764223691,
   "schema": {
     "video_id": {
       "type": "text",
@@ -12,16 +13,14 @@
       "description": "The 11-character ID only, e.g. dQw4w9WgXcQ from youtube.com/watch?v=dQw4w9WgXcQ.",
       "required": true,
       "regex": "^[A-Za-z0-9_-]{11}$",
-      "pos": 0,
-      "id": "Kl6JQNn6RSKCUJQ2Hxv1IA"
+      "pos": 0
     },
     "title": {
       "type": "text",
       "display_name": "Title",
       "description": "Screen readers announce this as the player name.",
       "required": true,
-      "pos": 1,
-      "id": "dAGO2zBlTu2iMdbQez_GPw"
+      "pos": 1
     },
     "playback_tab": {
       "type": "tab",
@@ -33,60 +32,39 @@
         "show_controls",
         "start"
       ],
-      "pos": 2,
-      "id": "laK6xP2r"
+      "pos": 2
     },
     "autoplay": {
       "type": "boolean",
       "display_name": "Autoplay",
       "description": "Browsers only autoplay muted video, so this also mutes.",
       "default_value": false,
-      "pos": 3,
-      "id": "KinzC2PQSNaHR4hEXVQnrg"
+      "pos": 3
     },
     "mute": {
       "type": "boolean",
       "display_name": "Mute",
       "default_value": false,
-      "pos": 4,
-      "id": "IpAkIw4xTJqrwkBJb5L9lw"
+      "pos": 4
     },
     "loop": {
       "type": "boolean",
       "display_name": "Loop",
       "default_value": false,
-      "pos": 5,
-      "id": "-ITJvRhjTQm2X7wq7tCNQw"
+      "pos": 5
     },
     "show_controls": {
       "type": "boolean",
       "display_name": "Show controls",
       "default_value": true,
-      "pos": 6,
-      "id": "-vkjF8IFQqmdrcgQQ07iRA"
+      "pos": 6
     },
     "start": {
       "type": "number",
       "display_name": "Start at (seconds)",
       "description": "Leave empty to start from the beginning.",
       "min_value": 0,
-      "pos": 7,
-      "id": "-2pSFViTSZyB5BvLwIuRPw"
+      "pos": 7
     }
-  },
-  "image": null,
-  "preview_field": "",
-  "is_root": false,
-  "preview_tmpl": null,
-  "is_nestable": true,
-  "all_presets": [],
-  "preset_id": null,
-  "real_name": "YouTube Player",
-  "component_group_uuid": "5327175c-5eba-4eae-b8ca-9f5aea2c9c35",
-  "color": "",
-  "icon": "",
-  "internal_tags_list": [],
-  "internal_tag_ids": [],
-  "content_type_asset_preview": null,
-  "metadata": {}
+  }
 }

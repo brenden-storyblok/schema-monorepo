@@ -1,36 +1,15 @@
 {
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": true,
+  "is_nestable": false,
   "name": "app_2_page",
   "display_name": "App 2 Page",
-  "description": "",
-  "created_at": "2026-10-20T14:57:51.268Z",
-  "updated_at": "2026-10-20T14:57:51.268Z",
-  "id": 232729277518694,
   "schema": {
     "body": {
       "type": "bloks",
-      "pos": 0,
-      "component_group_whitelist": [
-        "49bbd8a9-f6f5-404a-91b7-ec92530a9257",
-        "6bcb1912-9a2c-437f-bad7-8070bb50c353"
-      ],
-      "restrict_components": true,
-      "restrict_type": "groups",
-      "id": "VC0LIanfSDSl_A54OwQdqg"
+      "pos": 0
     }
-  },
-  "image": null,
-  "preview_field": "",
-  "is_root": true,
-  "preview_tmpl": null,
-  "is_nestable": false,
-  "all_presets": [],
-  "preset_id": null,
-  "real_name": "App 2 Page",
-  "component_group_uuid": "d6124e29-ff2c-4c7e-b49e-437b8db3a81d",
-  "color": "",
-  "icon": "",
-  "internal_tags_list": [],
-  "internal_tag_ids": [],
-  "content_type_asset_preview": null,
-  "metadata": {}
+  }
 }
