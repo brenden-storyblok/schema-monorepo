@@ -11,6 +11,7 @@ const SIZES = ['medium', 'large'] as const satisfies readonly NonNullable<
 >[];
 const VARIANTS = [
   'default',
+  'white',
   'subtle',
   'inverted',
 ] as const satisfies readonly NonNullable<Block<'teaser'>['variant']>[];

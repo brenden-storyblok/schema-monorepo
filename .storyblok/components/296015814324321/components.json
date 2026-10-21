@@ -40,7 +40,7 @@
     "display_name": "Hero",
     "description": "",
     "created_at": "2026-10-20T14:57:51.269Z",
-    "updated_at": "2026-10-20T14:57:51.269Z",
+    "updated_at": "2026-10-21T09:20:55.785Z",
     "id": 232729277522791,
     "schema": {
       "headline": {
@@ -124,13 +124,17 @@
       "variant": {
         "type": "option",
         "display_name": "Variant",
-        "description": "Inverted uses a dark surface.",
+        "description": "Default shows the page background. Inverted uses a dark surface.",
         "default_value": "default",
         "exclude_empty_option": true,
         "options": [
           {
             "name": "Default",
             "value": "default"
+          },
+          {
+            "name": "White",
+            "value": "white"
           },
           {
             "name": "Inverted",
@@ -162,7 +166,7 @@
     "display_name": "App 2 Page",
     "description": "",
     "created_at": "2026-10-20T14:57:51.268Z",
-    "updated_at": "2026-10-20T14:57:51.268Z",
+    "updated_at": "2026-10-21T09:10:04.454Z",
     "id": 232729277518694,
     "schema": {
       "body": {
@@ -175,6 +179,42 @@
         "restrict_components": true,
         "restrict_type": "groups",
         "id": "VC0LIanfSDSl_A54OwQdqg"
+      },
+      "style_tab": {
+        "type": "tab",
+        "display_name": "Style",
+        "keys": [
+          "background"
+        ],
+        "pos": 1,
+        "id": "zSXv2rA"
+      },
+      "background": {
+        "type": "option",
+        "display_name": "Background color",
+        "description": "Fills the whole page behind the content.",
+        "default_value": "default",
+        "exclude_empty_option": true,
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Subtle",
+            "value": "subtle"
+          },
+          {
+            "name": "Inverted",
+            "value": "inverted"
+          },
+          {
+            "name": "Brand",
+            "value": "brand"
+          }
+        ],
+        "pos": 2,
+        "id": "c_Z9dLotRgy0zUsLPC-vXg"
       }
     },
     "image": null,
@@ -198,7 +238,7 @@
     "display_name": "",
     "description": "",
     "created_at": "2026-10-20T09:49:06.975Z",
-    "updated_at": "2026-10-20T13:04:33.895Z",
+    "updated_at": "2026-10-21T09:20:55.795Z",
     "id": 232653402016222,
     "schema": {
       "name": {
@@ -256,12 +296,17 @@
       "variant": {
         "type": "option",
         "display_name": "Variant",
+        "description": "Default shows the page background.",
         "default_value": "default",
         "exclude_empty_option": true,
         "options": [
           {
             "name": "Default",
             "value": "default"
+          },
+          {
+            "name": "White",
+            "value": "white"
           },
           {
             "name": "Outlined",
@@ -430,7 +475,7 @@
     "display_name": "",
     "description": "",
     "created_at": "2026-10-20T09:49:06.953Z",
-    "updated_at": "2026-10-20T13:04:34.793Z",
+    "updated_at": "2026-10-21T09:20:55.792Z",
     "id": 232653401926108,
     "schema": {
       "headline": {
@@ -520,13 +565,17 @@
       "variant": {
         "type": "option",
         "display_name": "Variant",
-        "description": "Subtle uses a tinted surface; inverted uses a dark one.",
+        "description": "Default shows the page background. Subtle uses a tinted surface; inverted uses a dark one.",
         "default_value": "default",
         "exclude_empty_option": true,
         "options": [
           {
             "name": "Default",
             "value": "default"
+          },
+          {
+            "name": "White",
+            "value": "white"
           },
           {
             "name": "Subtle",

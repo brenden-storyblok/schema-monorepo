@@ -36,10 +36,12 @@ export const featureBlock = defineBlock({
     defineField('variant', {
       type: 'option',
       display_name: 'Variant',
+      description: 'Default shows the page background.',
       default_value: 'default',
       exclude_empty_option: true,
       options: [
         { name: 'Default', value: 'default' },
+        { name: 'White', value: 'white' },
         { name: 'Outlined', value: 'outlined' },
         { name: 'Accent', value: 'accent' },
       ],

@@ -7,7 +7,7 @@
     "targets": {
       "dev": {
         "options": {
-          "command": "next dev --experimental-https --port 3001"
+          "command": "next dev --experimental-https"
         }
       }
     }

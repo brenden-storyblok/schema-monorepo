@@ -10,6 +10,40 @@
     "body": {
       "type": "bloks",
       "pos": 0
+    },
+    "style_tab": {
+      "type": "tab",
+      "display_name": "Style",
+      "keys": [
+        "background"
+      ],
+      "pos": 1
+    },
+    "background": {
+      "type": "option",
+      "display_name": "Background color",
+      "description": "Fills the whole page behind the content.",
+      "default_value": "default",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Default",
+          "value": "default"
+        },
+        {
+          "name": "Subtle",
+          "value": "subtle"
+        },
+        {
+          "name": "Inverted",
+          "value": "inverted"
+        },
+        {
+          "name": "Brand",
+          "value": "brand"
+        }
+      ],
+      "pos": 2
     }
   }
 }

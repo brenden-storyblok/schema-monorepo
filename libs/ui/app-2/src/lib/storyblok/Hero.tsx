@@ -8,6 +8,7 @@ const ALIGNMENTS = ['left', 'center'] as const satisfies readonly NonNullable<
 >[];
 const VARIANTS = [
   'default',
+  'white',
   'inverted',
 ] as const satisfies readonly NonNullable<Block<'app_2_hero'>['variant']>[];
 

@@ -62,11 +62,13 @@ export const teaserBlock = defineBlock({
     defineField('variant', {
       type: 'option',
       display_name: 'Variant',
-      description: 'Subtle uses a tinted surface; inverted uses a dark one.',
+      description:
+        'Default shows the page background. Subtle uses a tinted surface; inverted uses a dark one.',
       default_value: 'default',
       exclude_empty_option: true,
       options: [
         { name: 'Default', value: 'default' },
+        { name: 'White', value: 'white' },
         { name: 'Subtle', value: 'subtle' },
         { name: 'Inverted', value: 'inverted' },
       ],

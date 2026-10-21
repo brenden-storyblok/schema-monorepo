@@ -7,14 +7,14 @@
     "parent_uuid": null
   },
   {
-    "name": "app-1-components",
+    "name": "App-1 Components",
     "id": 232729249277492,
     "uuid": "5327175c-5eba-4eae-b8ca-9f5aea2c9c35",
     "parent_id": 232692485969353,
     "parent_uuid": "acead823-d4e2-412d-9c00-e1931cf91559"
   },
   {
-    "name": "app-1-content-types",
+    "name": "App-1 Content Types",
     "id": 232729249584693,
     "uuid": "e82dc1e1-b5d6-44eb-ac06-3eb588421aea",
     "parent_id": 232692485969353,
@@ -28,32 +28,18 @@
     "parent_uuid": null
   },
   {
-    "name": "app-2-components",
+    "name": "App-2 Components",
     "id": 232729273902646,
     "uuid": "6bcb1912-9a2c-437f-bad7-8070bb50c353",
     "parent_id": 232728619005491,
     "parent_uuid": "97815c76-91cb-410e-a1f8-ab3b29677b11"
   },
   {
-    "name": "app-2-content-types",
+    "name": "App-2 Content Types",
     "id": 232729274172983,
     "uuid": "d6124e29-ff2c-4c7e-b49e-437b8db3a81d",
     "parent_id": 232728619005491,
     "parent_uuid": "97815c76-91cb-410e-a1f8-ab3b29677b11"
-  },
-  {
-    "name": "components",
-    "id": 232692486317514,
-    "uuid": "af044a6d-4c38-4f73-a033-ebbcf86167c9",
-    "parent_id": 232692485969353,
-    "parent_uuid": "acead823-d4e2-412d-9c00-e1931cf91559"
-  },
-  {
-    "name": "content-types",
-    "id": 232692489610699,
-    "uuid": "70b41193-96ac-4ba7-99c1-1afd8996b7b3",
-    "parent_id": 232692485969353,
-    "parent_uuid": "acead823-d4e2-412d-9c00-e1931cf91559"
   },
   {
     "name": "core",

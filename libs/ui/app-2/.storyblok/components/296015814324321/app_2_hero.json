@@ -80,13 +80,17 @@
     "variant": {
       "type": "option",
       "display_name": "Variant",
-      "description": "Inverted uses a dark surface.",
+      "description": "Default shows the page background. Inverted uses a dark surface.",
       "default_value": "default",
       "exclude_empty_option": true,
       "options": [
         {
           "name": "Default",
           "value": "default"
+        },
+        {
+          "name": "White",
+          "value": "white"
         },
         {
           "name": "Inverted",

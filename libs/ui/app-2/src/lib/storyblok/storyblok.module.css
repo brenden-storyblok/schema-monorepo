@@ -6,6 +6,47 @@
   margin-inline: auto;
 }
 
+/* Page background */
+
+.page {
+  --_page-bg: var(--sb-surface, #ffffff);
+}
+
+.page[data-background='subtle'] {
+  --_page-bg: var(--sb-surface-subtle, #f3f4f8);
+}
+
+/*
+ * Dark backgrounds publish `--sb-context-*` colors so blocks with a
+ * transparent variant (hero, teaser, feature, text) stay readable.
+ */
+.page[data-background='inverted'] {
+  --_page-bg: var(--sb-surface-inverted, #111827);
+  --sb-context-fg: var(--sb-text-inverted, #f9fafb);
+  --sb-context-muted: var(--sb-muted-inverted, #d1d5db);
+  --sb-context-accent: var(--sb-text-inverted, #f9fafb);
+  --sb-context-cta-bg: var(--sb-text-inverted, #f9fafb);
+  --sb-context-cta-fg: var(--sb-surface-inverted, #111827);
+  color: var(--sb-context-fg);
+}
+
+.page[data-background='brand'] {
+  --_page-bg: var(--sb-accent, #4338ca);
+  --sb-context-fg: var(--sb-accent-contrast, #ffffff);
+  --sb-context-muted: var(--sb-accent-soft, #e0e7ff);
+  --sb-context-accent: var(--sb-accent-contrast, #ffffff);
+  --sb-context-cta-bg: var(--sb-accent-contrast, #ffffff);
+  --sb-context-cta-fg: var(--sb-accent, #4338ca);
+  color: var(--sb-context-fg);
+}
+
+.pageBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: var(--_page-bg);
+}
+
 /*
  * Design tokens, same `--sb-*` names and defaults as ui-core. Apps override
  * the public `--sb-*` properties on an ancestor; the hero only reads the
@@ -30,18 +71,35 @@
   --_font-sm: var(--sb-font-sm, 0.8125rem);
   --_font-md: var(--sb-font-md, 1rem);
   --_font-body-lg: var(--sb-font-body-lg, 1.125rem);
+  /* Colors for the default (transparent) variant, set by the page. */
+  --_context-fg: var(--sb-context-fg, var(--_text));
+  --_context-muted: var(--sb-context-muted, var(--_muted));
+  --_context-accent: var(--sb-context-accent, var(--_accent));
+  --_context-cta-bg: var(--sb-context-cta-bg, var(--_accent));
+  --_context-cta-fg: var(--sb-context-cta-fg, var(--_accent-contrast));
 }
 
 /* Hero */
 
 .hero {
+  --_hero-bg: transparent;
+  --_hero-fg: var(--_context-fg);
+  --_hero-muted: var(--_context-muted);
+  --_hero-accent: var(--_context-accent);
+  --_hero-cta-bg: var(--_context-cta-bg);
+  --_hero-cta-fg: var(--_context-cta-fg);
+  padding: var(--_space-6) var(--_space-3);
+  background: var(--_hero-bg);
+  color: var(--_hero-fg);
+}
+
+.hero[data-variant='white'] {
   --_hero-bg: var(--_surface);
   --_hero-fg: var(--_text);
   --_hero-muted: var(--_muted);
   --_hero-accent: var(--_accent);
-  padding: var(--_space-6) var(--_space-3);
-  background: var(--_hero-bg);
-  color: var(--_hero-fg);
+  --_hero-cta-bg: var(--_accent);
+  --_hero-cta-fg: var(--_accent-contrast);
 }
 
 .hero[data-variant='inverted'] {
@@ -49,6 +107,8 @@
   --_hero-fg: var(--_text-inverted);
   --_hero-muted: var(--_muted-inverted);
   --_hero-accent: var(--_text-inverted);
+  --_hero-cta-bg: var(--_text-inverted);
+  --_hero-cta-fg: var(--_surface-inverted);
 }
 
 .heroInner {
@@ -104,8 +164,8 @@
   margin-top: var(--_space-1);
   padding: 0.75rem 1.5rem;
   border-radius: var(--_radius);
-  background: var(--_accent);
-  color: var(--_accent-contrast);
+  background: var(--_hero-cta-bg);
+  color: var(--_hero-cta-fg);
   font-size: var(--_font-md);
   font-weight: 600;
   text-decoration: none;
@@ -113,11 +173,6 @@
 
 .heroCta:hover {
   filter: brightness(1.1);
-}
-
-.hero[data-variant='inverted'] .heroCta {
-  background: var(--_text-inverted);
-  color: var(--_surface-inverted);
 }
 
 .hero[data-variant='inverted'] .heroCta:hover {

@@ -13,6 +13,7 @@ const ICONS = [
 ] as const satisfies readonly NonNullable<Block<'feature'>['icon']>[];
 const VARIANTS = [
   'default',
+  'white',
   'outlined',
   'accent',
 ] as const satisfies readonly NonNullable<Block<'feature'>['variant']>[];

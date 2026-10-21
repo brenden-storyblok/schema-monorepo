@@ -29,15 +29,27 @@
   --_font-md: var(--sb-font-md, 1rem);
   --_font-lg: var(--sb-font-lg, 1.25rem);
   --_font-body-lg: var(--sb-font-body-lg, 1.125rem);
+  /*
+   * Colors for content drawn on whatever surface sits behind the block.
+   * A page with a dark or brand background sets the `--sb-context-*`
+   * properties; transparent variants read them.
+   */
+  --_context-fg: var(--sb-context-fg, var(--_text));
+  --_context-muted: var(--sb-context-muted, var(--_muted));
+  --_context-accent: var(--sb-context-accent, var(--_accent));
+  --_context-cta-bg: var(--sb-context-cta-bg, var(--_accent));
+  --_context-cta-fg: var(--sb-context-cta-fg, var(--_accent-contrast));
 }
 
 /* Teaser */
 
 .teaser {
-  --_teaser-bg: var(--_surface);
-  --_teaser-fg: var(--_text);
-  --_teaser-muted: var(--_muted);
-  --_teaser-accent: var(--_accent);
+  --_teaser-bg: transparent;
+  --_teaser-fg: var(--_context-fg);
+  --_teaser-muted: var(--_context-muted);
+  --_teaser-accent: var(--_context-accent);
+  --_teaser-cta-bg: var(--_context-cta-bg);
+  --_teaser-cta-fg: var(--_context-cta-fg);
   padding: var(--_space-6) var(--_space-3);
   background: var(--_teaser-bg);
   color: var(--_teaser-fg);
@@ -45,6 +57,15 @@
 
 .teaser[data-size='medium'] {
   padding-block: var(--_space-5);
+}
+
+.teaser:is([data-variant='white'], [data-variant='subtle']) {
+  --_teaser-bg: var(--_surface);
+  --_teaser-fg: var(--_text);
+  --_teaser-muted: var(--_muted);
+  --_teaser-accent: var(--_accent);
+  --_teaser-cta-bg: var(--_accent);
+  --_teaser-cta-fg: var(--_accent-contrast);
 }
 
 .teaser[data-variant='subtle'] {
@@ -56,6 +77,8 @@
   --_teaser-fg: var(--_text-inverted);
   --_teaser-muted: var(--_muted-inverted);
   --_teaser-accent: var(--_text-inverted);
+  --_teaser-cta-bg: var(--_text-inverted);
+  --_teaser-cta-fg: var(--_surface-inverted);
 }
 
 .teaserInner {
@@ -108,16 +131,11 @@
   margin-top: var(--_space-1);
   padding: 0.75rem 1.5rem;
   border-radius: var(--_radius);
-  background: var(--_accent);
-  color: var(--_accent-contrast);
+  background: var(--_teaser-cta-bg);
+  color: var(--_teaser-cta-fg);
   font-size: var(--_font-md);
   font-weight: 600;
   text-decoration: none;
-}
-
-.teaser[data-variant='inverted'] .teaserCta {
-  background: var(--_text-inverted);
-  color: var(--_surface-inverted);
 }
 
 .teaser[data-variant='inverted'] .teaserCta:hover {
@@ -179,9 +197,9 @@
 /* Feature */
 
 .feature {
-  --_feature-bg: var(--_surface);
-  --_feature-fg: var(--_text);
-  --_feature-muted: var(--_muted);
+  --_feature-bg: transparent;
+  --_feature-fg: var(--_context-fg);
+  --_feature-muted: var(--_context-muted);
   --_feature-icon-bg: var(--_accent-soft);
   --_feature-icon-fg: var(--_accent);
   display: flex;
@@ -194,6 +212,12 @@
   background: var(--_feature-bg);
   color: var(--_feature-fg);
   box-shadow: var(--_shadow);
+}
+
+.feature[data-variant='white'] {
+  --_feature-bg: var(--_surface);
+  --_feature-fg: var(--_text);
+  --_feature-muted: var(--_muted);
 }
 
 .feature[data-variant='outlined'] {
@@ -266,7 +290,7 @@
   max-width: 72ch;
   margin-inline: auto;
   padding: var(--_space-4) var(--_space-3);
-  color: var(--_text);
+  color: var(--_context-fg);
   font-size: var(--_font-body-lg);
   line-height: 1.7;
 }
@@ -321,7 +345,7 @@
 }
 
 .text a {
-  color: var(--_accent);
+  color: var(--_context-accent);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
@@ -332,7 +356,7 @@
 }
 
 .text a:focus-visible {
-  outline: 3px solid var(--_accent);
+  outline: 3px solid var(--_context-accent);
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -340,8 +364,8 @@
 .text blockquote {
   margin-inline: 0;
   padding-inline-start: var(--_space-3);
-  border-inline-start: 3px solid var(--_accent);
-  color: var(--_muted);
+  border-inline-start: 3px solid var(--_context-accent);
+  color: var(--_context-muted);
 }
 
 .text blockquote > * {
