@@ -17,7 +17,3 @@ export const getStoryblokApi = storyblokInit({
   components,
 });
 
-// Draft content during development and in the Visual Editor preview;
-// published content everywhere else.
-export const storyVersion: 'draft' | 'published' =
-  process.env.NODE_ENV === 'production' ? 'published' : 'draft';

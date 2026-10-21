@@ -1,14 +1,19 @@
 import { StoryblokStory } from '@storyblok/react/rsc';
 import { notFound } from 'next/navigation';
-import { getStoryblokApi, storyVersion } from '@/lib/storyblok';
+import { getStoryblokApi } from '@/lib/storyblok';
+import { storyVersion } from '@monorepo/storyblok-utils';
 
 export default async function StoryPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug?: string[] }>;
+  searchParams: Promise<{ _storyblok?: string | string[] }>;
 }) {
   const { slug } = await params;
-  const story = await fetchStory(slug?.join('/') ?? 'home');
+  const { _storyblok } = await searchParams;
+  const storyVersionValue = storyVersion(_storyblok);
+  const story = await fetchStory(slug?.join('/') ?? 'home', storyVersionValue);
 
   if (!story) {
     notFound();
@@ -26,7 +31,7 @@ export default async function StoryPage({
   );
 }
 
-async function fetchStory(fullSlug: string) {
+async function fetchStory(fullSlug: string, storyVersion: 'draft' | 'published') {
   try {
     const { data } = await getStoryblokApi().get(
       `cdn/stories/${fullSlug}`,

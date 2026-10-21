@@ -48,6 +48,9 @@
   ],
   "references": [
     {
+      "path": "../../libs/shared/storyblok-utils"
+    },
+    {
       "path": "../../libs/ui/core"
     },
     {
