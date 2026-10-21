@@ -1,6 +1,7 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import type { Block } from '../../schema/schema';
 import { pickOption, resolveLink } from '@monorepo/storyblok-utils';
+import { StoryblokImage } from '@monorepo/ui-core';
 import styles from './storyblok.module.css';
 
 const ALIGNMENTS = ['left', 'center'] as const satisfies readonly NonNullable<
@@ -12,31 +13,18 @@ const VARIANTS = [
   'inverted',
 ] as const satisfies readonly NonNullable<Block<'app_2_hero'>['variant']>[];
 
-// Storyblok asset URLs look like
-// https://a.storyblok.com/f/<space>/<width>x<height>/<hash>/<name>.jpg
-// (regional hosts use a-us., a-ap. and so on).
-const STORYBLOK_ASSET =
-  /^https:\/\/a(?:-[a-z]+)?\.storyblok\.com\/f\/\d+\/(\d+)x(\d+)\//;
-
-// Resizes Storyblok assets to 1600px wide through the image service and reads
-// the original dimensions from the URL so the browser can reserve space.
-// External URLs and SVGs pass through untouched.
-function heroImage(filename: string) {
-  const match = STORYBLOK_ASSET.exec(filename);
-  if (!match || /\.svg$/i.test(filename)) return { src: filename };
-  return {
-    src: `${filename}/m/1600x0`,
-    width: Number(match[1]),
-    height: Number(match[2]),
-  };
-}
+// Match .heroInner: the page is 85% wide, the image takes one of two columns
+// (max 72rem total) from 768px, and centered heroes cap it at 48rem.
+const IMAGE_SIZES = {
+  left: '(min-width: 768px) min(42vw, 34.5rem), 85vw',
+  center: 'min(85vw, 48rem)',
+} as const;
 
 export default function Hero({ blok }: { blok: Block<'app_2_hero'> }) {
   const alignment = pickOption(blok.alignment, ALIGNMENTS, 'left');
   const variant = pickOption(blok.variant, VARIANTS, 'default');
   const link = resolveLink(blok.cta_link);
   const showCta = Boolean(blok.cta_label && link);
-  const image = blok.image?.filename ? heroImage(blok.image.filename) : null;
 
   return (
     <section
@@ -67,16 +55,12 @@ export default function Hero({ blok }: { blok: Block<'app_2_hero'> }) {
             </a>
           ) : null}
         </div>
-        {image ? (
-          <img
-            className={styles.heroImage}
-            src={image.src}
-            width={image.width}
-            height={image.height}
-            alt={blok.image?.alt ?? ''}
-            loading="eager"
-          />
-        ) : null}
+        <StoryblokImage
+          asset={blok.image}
+          className={styles.heroImage}
+          sizes={IMAGE_SIZES[alignment]}
+          preload
+        />
       </div>
     </section>
   );

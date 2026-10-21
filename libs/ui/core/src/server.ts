@@ -1,6 +1,20 @@
 // Use this file to export React server components
+export { default as Button } from './lib/storyblok/Button';
+export { default as ButtonGroup } from './lib/storyblok/ButtonGroup';
+export { default as ButtonGroupBlock } from './lib/storyblok/ButtonGroupBlock';
+export { default as Card } from './lib/storyblok/Card';
+export { default as Accordion } from './lib/storyblok/Accordion';
+export { default as AccordionItem } from './lib/storyblok/AccordionItem';
 export { default as Feature } from './lib/storyblok/Feature';
 export { default as Grid } from './lib/storyblok/Grid';
+export { default as Headline } from './lib/storyblok/Headline';
+export { default as Heading } from './lib/storyblok/Heading';
+export { default as Image } from './lib/storyblok/Image';
+export { default as LogoCloud } from './lib/storyblok/LogoCloud';
+export { default as Quote } from './lib/storyblok/Quote';
+export { default as Section } from './lib/storyblok/Section';
+export { default as StatItem } from './lib/storyblok/StatItem';
+export { default as Stats } from './lib/storyblok/Stats';
 export { default as Teaser } from './lib/storyblok/Teaser';
 export { default as Text } from './lib/storyblok/Text';
 export { components } from './lib/storyblok/components';

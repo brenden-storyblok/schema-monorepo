@@ -32,6 +32,7 @@
     "@storyblok/schema": "^0.5.0"
   },
   "peerDependencies": {
+    "next": "^16.0.0",
     "react": "^19.0.0"
   },
   "nx": {

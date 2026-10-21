@@ -1,0 +1,59 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": false,
+  "is_nestable": true,
+  "name": "button",
+  "display_name": "Button",
+  "schema": {
+    "label": {
+      "type": "text",
+      "display_name": "Label",
+      "description": "Say where the button goes, e.g. \"View pricing\" rather than \"Click here\".",
+      "required": true,
+      "pos": 0
+    },
+    "link": {
+      "type": "multilink",
+      "email_link_type": true,
+      "allow_target_blank": true,
+      "show_anchor": true,
+      "asset_link_type": true,
+      "display_name": "Link",
+      "description": "The button only appears when the link is set.",
+      "required": true,
+      "pos": 1
+    },
+    "style_tab": {
+      "type": "tab",
+      "display_name": "Style",
+      "keys": [
+        "variant"
+      ],
+      "pos": 2
+    },
+    "variant": {
+      "type": "option",
+      "display_name": "Variant",
+      "description": "Use one primary button per group. Link style shows underlined text.",
+      "default_value": "primary",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Primary",
+          "value": "primary"
+        },
+        {
+          "name": "Secondary",
+          "value": "secondary"
+        },
+        {
+          "name": "Link style",
+          "value": "link"
+        }
+      ],
+      "pos": 3
+    }
+  }
+}

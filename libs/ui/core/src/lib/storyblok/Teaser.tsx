@@ -1,6 +1,7 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import type { Block } from '../../schema/schema';
-import { pickOption, resolveLink } from '@monorepo/storyblok-utils';
+import { pickOption } from '@monorepo/storyblok-utils';
+import ButtonGroup from './ButtonGroup';
 import styles from './storyblok.module.css';
 
 const ALIGNMENTS = ['left', 'center'] as const satisfies readonly NonNullable<
@@ -20,8 +21,6 @@ export default function Teaser({ blok }: { blok: Block<'teaser'> }) {
   const alignment = pickOption(blok.alignment, ALIGNMENTS, 'left');
   const size = pickOption(blok.size, SIZES, 'large');
   const variant = pickOption(blok.variant, VARIANTS, 'default');
-  const link = resolveLink(blok.cta_link);
-  const showCta = Boolean(blok.cta_label && link);
 
   return (
     <section
@@ -41,16 +40,7 @@ export default function Teaser({ blok }: { blok: Block<'teaser'> }) {
         {blok.description ? (
           <p className={styles.teaserDescription}>{blok.description}</p>
         ) : null}
-        {showCta && link ? (
-          <a
-            className={styles.teaserCta}
-            href={link.href}
-            target={link.target}
-            rel={link.rel}
-          >
-            {blok.cta_label}
-          </a>
-        ) : null}
+        <ButtonGroup bloks={blok.buttons} alignment={alignment} />
       </div>
     </section>
   );

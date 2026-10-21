@@ -1,0 +1,118 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": false,
+  "is_nestable": true,
+  "name": "headline",
+  "display_name": "Headline",
+  "schema": {
+    "eyebrow": {
+      "type": "text",
+      "display_name": "Eyebrow",
+      "description": "Small label shown above the headline. It is read as separate text, not as part of the heading.",
+      "pos": 0
+    },
+    "text": {
+      "type": "text",
+      "display_name": "Text",
+      "required": true,
+      "pos": 1
+    },
+    "subline": {
+      "type": "textarea",
+      "display_name": "Subline",
+      "description": "Short paragraph shown below the headline.",
+      "pos": 2
+    },
+    "buttons": {
+      "type": "bloks",
+      "display_name": "Buttons",
+      "description": "Optional buttons shown below the headline.",
+      "maximum": 2,
+      "pos": 3,
+      "component_whitelist": [
+        "button"
+      ],
+      "restrict_components": true,
+      "restrict_type": ""
+    },
+    "style_tab": {
+      "type": "tab",
+      "display_name": "Style",
+      "keys": [
+        "level",
+        "size",
+        "alignment"
+      ],
+      "pos": 4
+    },
+    "level": {
+      "type": "option",
+      "display_name": "Heading level",
+      "description": "Sets the document outline for screen readers and search engines. Use one H1 per page, and only when the page has no hero. Other levels should follow on without skipping, such as H3 under H2.",
+      "default_value": "h2",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "H1",
+          "value": "h1"
+        },
+        {
+          "name": "H2",
+          "value": "h2"
+        },
+        {
+          "name": "H3",
+          "value": "h3"
+        },
+        {
+          "name": "H4",
+          "value": "h4"
+        }
+      ],
+      "pos": 5
+    },
+    "size": {
+      "type": "option",
+      "display_name": "Visual size",
+      "description": "Changes the look only. The level sets the document outline. Leave empty to match the level (H1 display, H2 large, H3 medium, H4 small).",
+      "options": [
+        {
+          "name": "Small",
+          "value": "small"
+        },
+        {
+          "name": "Medium",
+          "value": "medium"
+        },
+        {
+          "name": "Large",
+          "value": "large"
+        },
+        {
+          "name": "Display",
+          "value": "display"
+        }
+      ],
+      "pos": 6
+    },
+    "alignment": {
+      "type": "option",
+      "display_name": "Alignment",
+      "default_value": "left",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Left",
+          "value": "left"
+        },
+        {
+          "name": "Center",
+          "value": "center"
+        }
+      ],
+      "pos": 7
+    }
+  }
+}

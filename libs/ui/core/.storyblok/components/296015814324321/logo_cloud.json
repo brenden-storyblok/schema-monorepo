@@ -1,0 +1,124 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": false,
+  "is_nestable": true,
+  "name": "logo_cloud",
+  "display_name": "Logo cloud",
+  "schema": {
+    "headline": {
+      "type": "text",
+      "display_name": "Headline",
+      "description": "Optional, for example \"Trusted by\".",
+      "pos": 0
+    },
+    "logos": {
+      "type": "multiasset",
+      "display_name": "Logos",
+      "description": "Set the alt text of every logo to the company name. A logo with empty alt text is hidden from screen readers. SVG files work.",
+      "filetypes": [
+        "images"
+      ],
+      "required": true,
+      "pos": 1
+    },
+    "style_tab": {
+      "type": "tab",
+      "display_name": "Style",
+      "keys": [
+        "variant",
+        "alignment",
+        "grayscale",
+        "logo_height",
+        "heading_level"
+      ],
+      "pos": 2
+    },
+    "variant": {
+      "type": "option",
+      "display_name": "Variant",
+      "description": "Default shows the page background.",
+      "default_value": "default",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Default (transparent)",
+          "value": "default"
+        },
+        {
+          "name": "White",
+          "value": "white"
+        },
+        {
+          "name": "Subtle",
+          "value": "subtle"
+        }
+      ],
+      "pos": 3
+    },
+    "alignment": {
+      "type": "option",
+      "display_name": "Alignment",
+      "default_value": "center",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Left",
+          "value": "left"
+        },
+        {
+          "name": "Center",
+          "value": "center"
+        }
+      ],
+      "pos": 4
+    },
+    "grayscale": {
+      "type": "boolean",
+      "display_name": "Grayscale",
+      "description": "Shows logos in grayscale and in full color on hover. Check that light logos stay readable on the background.",
+      "default_value": true,
+      "pos": 5
+    },
+    "logo_height": {
+      "type": "option",
+      "display_name": "Logo height",
+      "default_value": "medium",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Small",
+          "value": "small"
+        },
+        {
+          "name": "Medium",
+          "value": "medium"
+        },
+        {
+          "name": "Large",
+          "value": "large"
+        }
+      ],
+      "pos": 6
+    },
+    "heading_level": {
+      "type": "option",
+      "display_name": "Heading level",
+      "description": "Use H2 for a top-level block. Use H3 only when the page already has an H2 above it.",
+      "default_value": "h2",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "H2",
+          "value": "h2"
+        },
+        {
+          "name": "H3",
+          "value": "h3"
+        }
+      ],
+      "pos": 7
+    }
+  }
+}

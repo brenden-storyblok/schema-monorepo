@@ -1,0 +1,94 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": false,
+  "is_nestable": true,
+  "name": "accordion",
+  "display_name": "Accordion",
+  "schema": {
+    "headline": {
+      "type": "text",
+      "display_name": "Headline",
+      "description": "Optional heading shown above the items.",
+      "pos": 0
+    },
+    "items": {
+      "type": "bloks",
+      "display_name": "Items",
+      "required": true,
+      "pos": 1,
+      "component_whitelist": [
+        "accordion_item"
+      ],
+      "restrict_components": true,
+      "restrict_type": ""
+    },
+    "allow_multiple": {
+      "type": "boolean",
+      "display_name": "Allow multiple open",
+      "description": "Off: opening an item closes the others.",
+      "default_value": true,
+      "pos": 2
+    },
+    "faq_schema": {
+      "type": "boolean",
+      "display_name": "Add FAQ structured data",
+      "description": "Tells search engines the items are questions and answers. Use only when the page is a real FAQ, and only once per page.",
+      "pos": 3
+    },
+    "style_tab": {
+      "type": "tab",
+      "display_name": "Style",
+      "keys": [
+        "variant",
+        "heading_level"
+      ],
+      "pos": 4
+    },
+    "variant": {
+      "type": "option",
+      "display_name": "Variant",
+      "description": "Default is transparent and shows the page background. White adds a white surface; outlined adds a border.",
+      "default_value": "default",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Default (transparent)",
+          "value": "default"
+        },
+        {
+          "name": "White",
+          "value": "white"
+        },
+        {
+          "name": "Outlined",
+          "value": "outlined"
+        }
+      ],
+      "pos": 5
+    },
+    "heading_level": {
+      "type": "option",
+      "display_name": "Question heading level",
+      "description": "The headline renders one level above the questions (h3 questions give an h2 headline, h4 gives h3), and h2 questions drop to h3 when a headline is set.",
+      "default_value": "h3",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "h3",
+          "value": "h3"
+        },
+        {
+          "name": "h2",
+          "value": "h2"
+        },
+        {
+          "name": "h4",
+          "value": "h4"
+        }
+      ],
+      "pos": 6
+    }
+  }
+}

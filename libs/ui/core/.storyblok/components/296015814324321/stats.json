@@ -1,0 +1,132 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": false,
+  "is_nestable": true,
+  "name": "stats",
+  "display_name": "Stats",
+  "schema": {
+    "headline": {
+      "type": "text",
+      "display_name": "Headline",
+      "pos": 0
+    },
+    "intro": {
+      "type": "textarea",
+      "display_name": "Intro",
+      "description": "Supporting paragraph shown below the headline.",
+      "pos": 1
+    },
+    "items": {
+      "type": "bloks",
+      "display_name": "Stats",
+      "maximum": 6,
+      "required": true,
+      "pos": 2,
+      "component_whitelist": [
+        "stat_item"
+      ],
+      "restrict_components": true,
+      "restrict_type": ""
+    },
+    "style_tab": {
+      "type": "tab",
+      "display_name": "Style",
+      "keys": [
+        "heading_level",
+        "variant",
+        "alignment",
+        "columns"
+      ],
+      "pos": 3
+    },
+    "heading_level": {
+      "type": "option",
+      "display_name": "Heading level",
+      "description": "Pick the level that fits the page outline. Use H3 when the block sits under another H2.",
+      "default_value": "h2",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "H2",
+          "value": "h2"
+        },
+        {
+          "name": "H3",
+          "value": "h3"
+        }
+      ],
+      "pos": 4
+    },
+    "variant": {
+      "type": "option",
+      "display_name": "Variant",
+      "description": "Default shows the page background. Subtle uses a tinted surface; inverted uses a dark one.",
+      "default_value": "default",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Default",
+          "value": "default"
+        },
+        {
+          "name": "White",
+          "value": "white"
+        },
+        {
+          "name": "Subtle",
+          "value": "subtle"
+        },
+        {
+          "name": "Inverted",
+          "value": "inverted"
+        }
+      ],
+      "pos": 5
+    },
+    "alignment": {
+      "type": "option",
+      "display_name": "Alignment",
+      "default_value": "left",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Left",
+          "value": "left"
+        },
+        {
+          "name": "Center",
+          "value": "center"
+        }
+      ],
+      "pos": 6
+    },
+    "columns": {
+      "type": "option",
+      "display_name": "Columns",
+      "description": "Columns on desktop. Auto fits as many as the width allows. Smaller screens use fewer.",
+      "default_value": "auto",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Auto",
+          "value": "auto"
+        },
+        {
+          "name": "2 columns",
+          "value": "2"
+        },
+        {
+          "name": "3 columns",
+          "value": "3"
+        },
+        {
+          "name": "4 columns",
+          "value": "4"
+        }
+      ],
+      "pos": 7
+    }
+  }
+}

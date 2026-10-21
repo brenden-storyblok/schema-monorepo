@@ -1,5 +1,6 @@
 import { defineBlock, defineField } from '@storyblok/schema';
 import { coreFolder } from '../folders';
+import { iconOptions } from '../icons';
 
 export const featureBlock = defineBlock({
   name: 'feature',
@@ -20,13 +21,7 @@ export const featureBlock = defineBlock({
       display_name: 'Icon',
       default_value: 'none',
       exclude_empty_option: true,
-      options: [
-        { name: 'None', value: 'none' },
-        { name: 'Bolt', value: 'bolt' },
-        { name: 'Shield', value: 'shield' },
-        { name: 'Chart', value: 'chart' },
-        { name: 'Sparkles', value: 'sparkles' },
-      ],
+      options: iconOptions,
     }),
     defineField('style_tab', {
       type: 'tab',

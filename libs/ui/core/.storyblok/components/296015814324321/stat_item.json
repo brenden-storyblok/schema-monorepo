@@ -1,0 +1,61 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": false,
+  "is_nestable": true,
+  "name": "stat_item",
+  "display_name": "Stat item",
+  "schema": {
+    "value": {
+      "type": "text",
+      "display_name": "Value",
+      "description": "The figure itself, e.g. \"98%\" or \"2.4M\".",
+      "required": true,
+      "pos": 0
+    },
+    "label": {
+      "type": "text",
+      "display_name": "Label",
+      "description": "Says what the value measures, e.g. \"Customer satisfaction\". Screen readers read it before the value.",
+      "required": true,
+      "pos": 1
+    },
+    "description": {
+      "type": "textarea",
+      "display_name": "Description",
+      "description": "Optional context, such as the period or source.",
+      "pos": 2
+    },
+    "icon": {
+      "type": "option",
+      "display_name": "Icon",
+      "description": "Decorative. Screen readers skip it.",
+      "default_value": "none",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "None",
+          "value": "none"
+        },
+        {
+          "name": "Bolt",
+          "value": "bolt"
+        },
+        {
+          "name": "Shield",
+          "value": "shield"
+        },
+        {
+          "name": "Chart",
+          "value": "chart"
+        },
+        {
+          "name": "Sparkles",
+          "value": "sparkles"
+        }
+      ],
+      "pos": 3
+    }
+  }
+}

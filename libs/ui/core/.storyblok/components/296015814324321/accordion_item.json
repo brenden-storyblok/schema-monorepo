@@ -1,0 +1,41 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": false,
+  "is_nestable": true,
+  "name": "accordion_item",
+  "display_name": "Accordion item",
+  "schema": {
+    "question": {
+      "type": "text",
+      "display_name": "Question",
+      "description": "Shown as the clickable heading of the item.",
+      "required": true,
+      "pos": 0
+    },
+    "answer": {
+      "type": "richtext",
+      "display_name": "Answer",
+      "description": "Shown when the item opens. With FAQ schema on, search engines read it as plain text.",
+      "required": true,
+      "customize_toolbar": true,
+      "toolbar": [
+        "bold",
+        "italic",
+        "link",
+        "list",
+        "olist",
+        "paragraph"
+      ],
+      "allow_target_blank": true,
+      "pos": 1
+    },
+    "open_by_default": {
+      "type": "boolean",
+      "display_name": "Open by default",
+      "description": "With \"Allow multiple open\" off, only the first open item stays open.",
+      "pos": 2
+    }
+  }
+}

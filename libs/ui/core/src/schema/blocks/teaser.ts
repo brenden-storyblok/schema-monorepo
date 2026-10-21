@@ -21,18 +21,13 @@ export const teaserBlock = defineBlock({
       display_name: 'Description',
       description: 'Supporting paragraph shown below the headline.',
     }),
-    defineField('cta_label', {
-      type: 'text',
-      display_name: 'Button label',
-    }),
-    defineField('cta_link', {
-      type: 'multilink',
-      email_link_type: true,
-      allow_target_blank: true,
-      show_anchor: true,
-      asset_link_type: true,
-      display_name: 'Button link',
-      description: 'The button only appears when both label and link are set.',
+    defineField('buttons', {
+      type: 'bloks',
+      display_name: 'Buttons',
+      description:
+        'Optional buttons shown below the description.',
+      allow: ['button'],
+      maximum: 2,
     }),
     defineField('style_tab', {
       type: 'tab',

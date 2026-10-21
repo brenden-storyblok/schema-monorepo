@@ -1,0 +1,108 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": false,
+  "is_nestable": true,
+  "name": "section",
+  "display_name": "Section",
+  "schema": {
+    "body": {
+      "type": "bloks",
+      "display_name": "Content",
+      "description": "Blocks shown inside the section. Start with a Headline block to name the section for screen reader users.",
+      "pos": 0,
+      "component_denylist": [
+        "section",
+        "accordion_item",
+        "button",
+        "stat_item"
+      ],
+      "restrict_components": true,
+      "restrict_type": ""
+    },
+    "style_tab": {
+      "type": "tab",
+      "display_name": "Style",
+      "keys": [
+        "background",
+        "spacing",
+        "width"
+      ],
+      "pos": 1
+    },
+    "background": {
+      "type": "option",
+      "display_name": "Background color",
+      "description": "Default is transparent and shows the page background. Nested blocks adapt their text color.",
+      "default_value": "default",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Default (transparent)",
+          "value": "default"
+        },
+        {
+          "name": "White",
+          "value": "white"
+        },
+        {
+          "name": "Subtle",
+          "value": "subtle"
+        },
+        {
+          "name": "Inverted",
+          "value": "inverted"
+        },
+        {
+          "name": "Brand",
+          "value": "brand"
+        }
+      ],
+      "pos": 2
+    },
+    "spacing": {
+      "type": "option",
+      "display_name": "Spacing",
+      "description": "Vertical padding of the section.",
+      "default_value": "default",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Compact",
+          "value": "compact"
+        },
+        {
+          "name": "Default",
+          "value": "default"
+        },
+        {
+          "name": "Relaxed",
+          "value": "relaxed"
+        }
+      ],
+      "pos": 3
+    },
+    "width": {
+      "type": "option",
+      "display_name": "Content width",
+      "default_value": "content",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Content",
+          "value": "content"
+        },
+        {
+          "name": "Wide",
+          "value": "wide"
+        },
+        {
+          "name": "Full",
+          "value": "full"
+        }
+      ],
+      "pos": 4
+    }
+  }
+}

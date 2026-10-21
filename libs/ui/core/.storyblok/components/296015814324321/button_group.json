@@ -1,0 +1,49 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": false,
+  "is_nestable": true,
+  "name": "button_group",
+  "display_name": "Button group",
+  "schema": {
+    "buttons": {
+      "type": "bloks",
+      "display_name": "Buttons",
+      "description": "Use one primary button per group.",
+      "required": true,
+      "maximum": 4,
+      "pos": 0,
+      "component_whitelist": [
+        "button"
+      ],
+      "restrict_components": true,
+      "restrict_type": ""
+    },
+    "style_tab": {
+      "type": "tab",
+      "display_name": "Style",
+      "keys": [
+        "alignment"
+      ],
+      "pos": 1
+    },
+    "alignment": {
+      "type": "option",
+      "display_name": "Alignment",
+      "default_value": "left",
+      "exclude_empty_option": true,
+      "options": [
+        {
+          "name": "Left",
+          "value": "left"
+        },
+        {
+          "name": "Center",
+          "value": "center"
+        }
+      ],
+      "pos": 2
+    }
+  }
+}

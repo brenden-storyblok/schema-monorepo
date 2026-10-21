@@ -23,7 +23,7 @@ function isEmpty(doc: Block<'text'>['text'] | undefined): boolean {
 // so map them onto that shape and let `resolveLink` build the href. Without
 // this override the SDK renders the editor's raw `href` and serializes the
 // resolved story into a `story` attribute.
-function RichTextLink({
+export function RichTextLink({
   attrs,
   children,
 }: StoryblokReactRichTextProps<'link'>) {
@@ -38,7 +38,7 @@ function RichTextLink({
     email: href.replace(/^mailto:/, ''),
   } as MultilinkFieldValue);
 
-  if (!link) return <>{children}</>;
+  if (!link) return children;
   return (
     <a href={link.href} target={link.target} rel={link.rel}>
       {children}
