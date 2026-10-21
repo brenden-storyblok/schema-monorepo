@@ -60,4 +60,4 @@ certificates
 # Storyblok CLI output (component JSON under .storyblok/components/ stays committable)
 **/.storyblok/logs/
 **/.storyblok/reports/
-**/.storyblok/schema/changesets
+**/.storyblok/schema/changesets/
