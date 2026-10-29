@@ -2,101 +2,90 @@
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+This repo is an [Nx](https://nx.dev) workspace. Nx runs the tasks for each app and library. See [What is Nx?](https://nx.dev/docs/getting-started/intro).
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/next?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+To see the projects and their dependencies, run `npx nx graph`. To list the tasks of one project, run `npx nx show project <name>`.
 
-## Run tasks
+Two Next.js apps render content from one Storyblok space. Libraries define the block schemas in TypeScript.
 
-To run the dev server for your app, use:
+## Getting started
 
-```sh
-npx nx dev app-1
+1. Install dependencies:
+
+   ```sh
+   npm install
+   ```
+
+2. Copy `apps/app-N/.env.example` to `apps/app-N/.env.local`. Set `STORYBLOK_API_KEY` to a preview access token from the space.
+3. Start an app:
+
+   ```sh
+   npx nx dev @monorepo/app-1
+   ```
+
+   The dev server uses HTTPS with a self-signed certificate. Accept the browser warning.
+
+4. To use the Visual Editor, follow [Visual Preview in Next.js](https://www.storyblok.com/docs/guides/nextjs/visual-preview).
+5. Log in to the Storyblok CLI before you push a schema:
+
+   ```sh
+   npx storyblok login
+   ```
+
+## Project layout
+
+```mermaid
+flowchart LR
+  core["libs/ui/core"]
+  lib1["libs/ui/app-1"]
+  lib2["libs/ui/app-2"]
+  space[("Storyblok space")]
+  app1["apps/app-1"]
+  app2["apps/app-2"]
+
+  core -- push --> space
+  lib1 -- push --> space
+  lib2 -- push --> space
+  lib1 -. references .-> core
+  lib2 -. references .-> core
+  app1 --> core
+  app1 --> lib1
+  app2 --> core
+  app2 --> lib2
 ```
 
-To create a production bundle:
+app-1 and app-2 contain only routing, data fetching and `storyblokInit`. The blocks, schemas and components are in libraries. See [Nx: Keep applications thin](https://nx.dev/docs/kb/folder-structure).
 
-```sh
-npx nx build app-1
-```
+Each app uses two libraries: `@monorepo/ui-core` and its own app library. app-1 uses `ui-app-1`. app-2 uses `ui-app-2`. The page block of each app allows the `@monorepo/ui-core` blocks, so editors can add them to the pages of both apps.
 
-To see all available targets to run for a project, run:
+## Schemas in this monorepo
 
-```sh
-npx nx show project app-1
-```
+Each block is a TypeScript definition. The Storyblok CLI pushes the definitions to the space. See [Storyblok Schema](https://www.storyblok.com/docs/libraries/js/schema) and [`schema push`](https://www.storyblok.com/docs/tooling/cli/schema/push).
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+- Each library owns the schema and components for its blocks. Apps own no schema.
+- App libraries reference `@monorepo/ui-core` folders in `allow` lists. Push `@monorepo/ui-core` before an app library.
+- Block and folder names must be unique in the space. Add the app name to the name of each app block and folder. Example block: `app_2_hero`. Example folder: `App 2 Components`.
+- Do not run `schema push --delete`. Each library's schema lists only its own blocks, so `--delete` removes the blocks of every other library.
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## Add a block to app-2
 
-## Add new projects
+1. Define the block in `libs/ui/app-2/src/schema/blocks/` with the `app_2_` prefix. Add it to `libs/ui/app-2/src/schema/schema.ts`.
+2. Write its component in `libs/ui/app-2/src/lib/storyblok/`. The app needs no change.
+3. Push the schema:
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+   ```sh
+   npx nx run ui-app-2:schema:push:dry
+   npx nx run ui-app-2:schema:push
+   ```
 
-Use the plugin's generator to create new projects.
+## Commands
 
-To generate a new application, use:
+| Command                            | Effect                          |
+| ---------------------------------- | ------------------------------- |
+| `npx nx dev @monorepo/app-1`       | Start app-1                     |
+| `npm run dev`                      | Start all apps                  |
+| `npx nx run <lib>:schema:validate` | Validate a library schema       |
+| `npx nx run <lib>:schema:push:dry` | Show the diff against the space |
+| `npx nx run <lib>:schema:push`     | Apply the diff                  |
 
-```sh
-npx nx g @nx/next:app demo
-```
-
-To generate a new library, use:
-
-```sh
-npx nx g @nx/react:lib mylib
-```
-
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
-
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Set up CI!
-
-### Step 1
-
-To connect to Nx Cloud, run the following command:
-
-```sh
-npx nx connect
-```
-
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
-
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-### Step 2
-
-Use the following command to configure a CI workflow for your workspace:
-
-```sh
-npx nx g ci-workflow
-```
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/nx-api/next?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+`<lib>` is `@monorepo/ui-core`, `ui-app-1` or `ui-app-2`. Push `@monorepo/ui-core` first.
