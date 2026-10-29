@@ -67,7 +67,7 @@ Each block is a TypeScript definition. The Storyblok CLI pushes the definitions 
 - Block and folder names must be unique in the space. Add the app name to the name of each app block and folder. Example block: `app_2_hero`. Example folder: `App 2 Components`.
 - Do not run `schema push --delete`. Each library's schema lists only its own blocks, so `--delete` removes the blocks of every other library.
 
-## Add a block to app-2
+### Example: Add a block to app-2
 
 1. Define the block in `libs/ui/app-2/src/schema/blocks/` with the `app_2_` prefix. Add it to `libs/ui/app-2/src/schema/schema.ts`.
 2. Write its component in `libs/ui/app-2/src/lib/storyblok/`. The app needs no change.
