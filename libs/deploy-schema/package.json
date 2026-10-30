@@ -7,7 +7,7 @@
   "types": "./src/index.ts",
   "scripts": {
     "schema:validate": "storyblok schema validate src/schema/schema.ts",
-    "schema:push": "storyblok schema push src/schema/schema.ts --space 296015814324321",
+    "schema:push": "storyblok schema push src/schema/schema.ts --space 296015814324321 --delete",
     "schema:push:dry": "storyblok schema push src/schema/schema.ts --space 296015814324321 --dry-run"
   },
   "exports": {
@@ -20,6 +20,11 @@
   },
   "dependencies": {},
   "nx": {
-    "name": "deploy-schema"
+    "name": "deploy-schema",
+    "targets": {
+      "schema:push": {
+        "cache": false
+      }
+    }
   }
 }

@@ -32,7 +32,7 @@ export type Story = InferStory<Blocks, FieldPlugins>;
 export type StoryMapi = InferStoryMapi<Blocks, FieldPlugins>;
 
 // Blocks that app-2's `bloks` fields can nest: app-2's own plus ui-core's.
-// ui-core pushes its blocks; app-2 only references them.
+// ui-core defines these blocks; app-2 only references them.
 type RegistryBlocks = Blocks | CoreBlocks;
 
 // Type a component's props by block name: `Block<"app_2_page">`.

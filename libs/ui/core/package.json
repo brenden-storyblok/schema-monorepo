@@ -34,11 +34,6 @@
     "react": "^19.0.0"
   },
   "nx": {
-    "name": "ui-core",
-    "targets": {
-      "schema:push": {
-        "cache": false
-      }
-    }
+    "name": "ui-core"
   }
 }

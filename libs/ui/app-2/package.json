@@ -34,11 +34,6 @@
     "react": "^19.0.0"
   },
   "nx": {
-    "name": "ui-app-2",
-    "targets": {
-      "schema:push": {
-        "cache": false
-      }
-    }
+    "name": "ui-app-2"
   }
 }
