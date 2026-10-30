@@ -20,6 +20,9 @@
     },
     {
       "path": "./libs/ui/app-2"
+    },
+    {
+      "path": "./libs/deploy-schema"
     }
   ]
 }

@@ -14,5 +14,8 @@
   },
   "dependencies": {
     "@storyblok/schema": "^0.5.0"
+  },
+  "nx": {
+    "name": "storyblok-utils"
   }
 }

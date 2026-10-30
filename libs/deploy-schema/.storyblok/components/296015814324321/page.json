@@ -1,0 +1,10 @@
+{
+  "id": 1,
+  "created_at": "",
+  "updated_at": "",
+  "is_root": true,
+  "is_nestable": false,
+  "name": "page",
+  "display_name": "Page",
+  "schema": {}
+}
